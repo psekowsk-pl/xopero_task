@@ -1,0 +1,68 @@
+# ---- .NET build artifacts ----
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]ogs/
+
+# ---- Visual Studio files ----
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---- NuGet ----
+*.nupkg
+*.snupkg
+*.nuspec
+.nuget/
+packages/
+*.lock.json
+
+# ---- Test results (xUnit, NUnit, MSTest, etc.) ----
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# xUnit output logs
+*.xml
+*.html
+*.json
+
+# ---- Resharper / Rider ----
+.idea/
+*.DotSettings.user
+_ReSharper*/
+*.csproj.user
+*.sln.iml
+
+# ---- Temporary files ----
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.orig
+
+# ---- Build system ----
+*.cache
+project.lock.json
+artifacts/
+
+# ---- Other tooling ----
+.coverage/
+*.opencover.xml
+*.testsettings
+*.runsettings
+
+# ---- User secrets ----
+secrets.json
+*.env
+
+# ---- Optional: test output or generated data ----
+TestOutput/
+Reports/
+CoverageReports/
