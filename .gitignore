@@ -30,7 +30,6 @@ TestResults/
 # xUnit output logs
 *.xml
 *.html
-*.json
 
 # ---- Resharper / Rider ----
 .idea/
