@@ -7,7 +7,7 @@ Projekt jest zintegrowanym środowiskiem do testowania API (https://reqres.in) o
 ## Jak uruchomić testy
 
 Aby uruchomić testy należy:
-1. Skopiuj poniższego jsona do pliku secret:
+1. Skopiuj poniższego jsona do pliku secrets:
 ```
   {
     "Login": "standard_user",
@@ -17,7 +17,17 @@ Aby uruchomić testy należy:
   }
 ```
 2. Skonfiguruj pliki configuration.api.json oraz configuration.ui.json pod swoje potrzeby.
-3. Uruchom testy w Eksploratorze testów
+3. Otwórz terminal i wprowadź ścieżkę do głównego folderu: XOPERO_task.
+4. Zainstaluj przeglądarki wykorzystywane przez playwright, za pomocą poniższej komendy:
+```
+dotnet tool install --global Microsoft.Playwright.CLI
+playwright install
+```
+5. Skompiluj rozwiązanie.
+6. Uruchom testy w Eksploratorze testów lub za pomocą komendy:
+```
+dotnet test
+```
 
 ## Raport z wynikami wszystkich testów:
 <img width="1908" height="577" alt="obraz" src="https://github.com/user-attachments/assets/4c3d0ee4-13df-4e1f-872d-e314627cdfb5" />
@@ -85,7 +95,7 @@ The project is an integrated environment for testing APIs (https://reqres.in) an
 ## How to run tests
 
 To run tests, you need to:
-1. Copy the following JSON to the secret file:
+1. Copy the following JSON to the secrets file:
 ```
   {
     “Login”: “standard_user”,
@@ -95,7 +105,17 @@ To run tests, you need to:
   }
 ```
 2. Configure the configuration.api.json and configuration.ui.json files according to your needs.
-3. Run the tests in the Test Explorer
+3. Open the terminal and enter the path to the main folder: XOPERO_task.
+4. Install the browsers used by Playwright, using the following command:
+```
+dotnet tool install --global Microsoft.Playwright.CLI
+playwright install
+```
+5. Compile the solution.
+6. Run tests in Test Explorer or by using this command:
+```
+dotnet test
+```
 
 ## Report with all test results:
 <img width="1908" height="577" alt="image" src="https://github.com/user-attachments/assets/4c3d0ee4-13df-4e1f-872d-e314627cdfb5" />
