@@ -17,14 +17,15 @@ Aby uruchomić testy należy:
   }
 ```
 2. Skonfiguruj pliki configuration.api.json oraz configuration.ui.json pod swoje potrzeby.
-3. Otwórz terminal i wprowadź ścieżkę do głównego folderu: XOPERO_task.
-4. Zainstaluj przeglądarki wykorzystywane przez playwright, za pomocą poniższej komendy:
+3. Skompiluj rozwiązanie.
+4. Otwórz terminal i wprowadź ścieżkę do głównego folderu: XOPERO_task.
+5. Zainstaluj przeglądarki wykorzystywane przez playwright, za pomocą poniższej komendy:
 ```
 dotnet tool install --global Microsoft.Playwright.CLI
 playwright install
 ```
-5. Skompiluj rozwiązanie.
-6. Uruchom testy w Eksploratorze testów lub za pomocą komendy:
+6. Skompiluj rozwiązanie.
+7. Uruchom testy w Eksploratorze testów lub za pomocą komendy:
 ```
 dotnet test
 ```
@@ -105,14 +106,15 @@ To run tests, you need to:
   }
 ```
 2. Configure the configuration.api.json and configuration.ui.json files according to your needs.
-3. Open the terminal and enter the path to the main folder: XOPERO_task.
-4. Install the browsers used by Playwright, using the following command:
+3. Compile the solution.
+4. Open the terminal and enter the path to the main folder: XOPERO_task.
+5. Install the browsers used by Playwright, using the following command:
 ```
 dotnet tool install --global Microsoft.Playwright.CLI
 playwright install
 ```
-5. Compile the solution.
-6. Run tests in Test Explorer or by using this command:
+6. Compile the solution.
+7. Run tests in Test Explorer or by using this command:
 ```
 dotnet test
 ```
