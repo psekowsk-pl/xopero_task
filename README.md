@@ -1,6 +1,6 @@
-## [PL]
+[PL]
 
-## Opis
+## Opis projektu
 
 Projekt jest zintegrowanym środowiskiem do testowania API (https://reqres.in) oraz UI (https://www.saucedemo.com) z wykorzystaniem nowoczesnych narzędzi testowych w ekosystemie .NET.
 
@@ -31,6 +31,7 @@ Projekt podzielony jest na 3 główne foldery:
 
 W folderze API-Tests znajdują się:
 
+```
 📁 API-Tests
 │
 ├── 📁 Configuration - pliki konfiguracyjne
@@ -39,9 +40,11 @@ W folderze API-Tests znajdują się:
 ├── 📁 TestExtension - klasy i funkcje służące do wspomagania konkretnych testów (ładowanie danych z API, przygotowanie danych do POST, PUT, itd.)
 │
 └── 📁 Tests - folder z testami
+```
     
 W folderze UI-Tests znajdują się:
 
+```
 📁 UI-Tests
 │
 ├── 📁 Configuration - pliki konfiguracyjne
@@ -50,12 +53,15 @@ W folderze UI-Tests znajdują się:
 ├── 📁 Helpers - klasy i funkcje służące do wspomagania projektu (ładowanie danych, itd.)
 ├── 📁 Pages - klasy z elementami konkretnych stron
 └── 📁 Tests - folder z testami
+```
 
 W folderze Common znajdują się:
 
+```
 📁 Common
 │
 └── 📁 Helpers - klasy i funkcje służące do wspomagania projektu (ładowanie danych, itd.)
+```
 
 ## Wykorzystane narzędzia:
 - xUnit - framework do testowania jednostkowego w .NET.
@@ -68,10 +74,11 @@ W folderze Common znajdują się:
 Gdybym miał więcej zasobów i czasu:
 - zaimplementowałbym zaawansowany generator raportów takich jak Allure lub ExtentReport i zintegrowałbym go z obecną architekturą
 
---
-## [EN]
+<br/>
+<br/>
+[EN]
 
-## Opis
+## Project description
 
 The project is an integrated environment for testing APIs (https://reqres.in) and UIs (https://www.saucedemo.com) using modern testing tools in the .NET ecosystem.
 
@@ -102,6 +109,7 @@ The project is divided into 3 main folders:
 
 The API-Tests folder contains:
 
+```
 📁 API-Tests
 │
 ├── 📁 Configuration - configuration files
@@ -110,9 +118,11 @@ The API-Tests folder contains:
 ├── 📁 TestExtension - classes and functions used to support specific tests (loading data from the API, preparing data for POST, PUT, etc.)
 │
 └── 📁 Tests - folder with tests
+```
     
 The UI-Tests folder contains:
 
+```
 📁 UI-Tests
 │
 ├── 📁 Configuration - configuration files
@@ -121,12 +131,15 @@ The UI-Tests folder contains:
 ├── 📁 Helpers - classes and functions used to support the project (loading data, etc.)
 ├── 📁 Pages - classes with elements of specific pages
 └── 📁 Tests - folder with tests
+```
 
 The Common folder contains:
 
+```
 📁 Common
 │
 └── 📁 Helpers - classes and functions used to support the project (loading data, etc.)
+```
 
 ## Tools used:
 - xUnit - a framework for unit testing in .NET.
