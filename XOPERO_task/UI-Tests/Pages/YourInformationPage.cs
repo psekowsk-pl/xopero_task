@@ -1,6 +1,6 @@
 ﻿using Microsoft.Playwright;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class YourInformationPage
 {

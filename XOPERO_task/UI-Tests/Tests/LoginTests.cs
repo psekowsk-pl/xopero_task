@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class LoginTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
 {
@@ -31,7 +31,7 @@ public class LoginTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
     {
         Assert.True(await _homePage.TitleLabel.IsVisibleAsync());
 
-        await _homePage.LoginAsync(new SecretsProvider());
+        await _homePage.LoginAsync(new UISecretsProvider());
 
         Assert.True(await _productsPage.BasketButton.IsVisibleAsync());
     }
@@ -42,7 +42,7 @@ public class LoginTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
         Assert.True(await _homePage.TitleLabel.IsVisibleAsync());
 
         await _homePage.LoginAsync("not_existing_user", "not_existing_user_password");
-
+        
         Assert.Contains("Epic sadface: Username and password do not match any user in this service", await _homePage.LoginErrorLabel.TextContentAsync());
     }
 }

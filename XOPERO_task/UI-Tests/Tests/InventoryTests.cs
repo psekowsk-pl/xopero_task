@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
+using XOPERO_task.Common.Helpers;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class InventoryTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
 {
@@ -33,29 +34,34 @@ public class InventoryTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
     [Fact]
     public async Task AddProductToBasketAndVerifyIt()
     {
+        // Login
         Assert.True(await _homePage.TitleLabel.IsVisibleAsync());
 
-        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.ProductsDataPath);
+        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.UIProductsDataPath);
 
-        await _homePage.LoginAsync(new SecretsProvider());
+        await _homePage.LoginAsync(new UISecretsProvider());
 
+        // Add item to basket
         Assert.True(await _productsPage.GetInventoryItem(_productsDto.First()).IsVisibleAsync());
         await _productsPage.GetInventoryItemAddToCartButton(_productsDto.First()).ClickAsync();
         await _productsPage.BasketButton.ClickAsync();
 
+        // Verify basket
         Assert.True(await _cartPage.GetInventoryItem(_productsDto.First()).IsVisibleAsync());
     }
 
     [Fact]
     public async Task AddRandomProductsToBasketAndVerifyThem()
     {
+        // Login
         var elementIndexes = ValueGeneratorHelper.GetRandomNumbersArray(minLength: 0, maxLength: 5, numberOfElements: 3);
         Assert.True(await _homePage.TitleLabel.IsVisibleAsync());
 
-        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.ProductsDataPath);
+        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.UIProductsDataPath);
 
-        await _homePage.LoginAsync(new SecretsProvider());
+        await _homePage.LoginAsync(new UISecretsProvider());
 
+        // Add item to basket
         foreach (var index in elementIndexes)
         {
             Assert.True(await _productsPage.GetInventoryItem(_productsDto[index]).IsVisibleAsync());
@@ -64,6 +70,7 @@ public class InventoryTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
 
         await _productsPage.BasketButton.ClickAsync();
 
+        // Verify basket
         foreach (var index in elementIndexes)
         {
             Assert.True(await _cartPage.GetInventoryItem(_productsDto[index]).IsVisibleAsync());

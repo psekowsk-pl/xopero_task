@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
-public class SecretsProvider
+public class UISecretsProvider
 {
     private readonly IConfiguration _config;
 
-    public SecretsProvider()
+    public UISecretsProvider()
     {
         _config = new ConfigurationBuilder()
-            .AddUserSecrets<SecretsProvider>()
+            .AddUserSecrets<APISecretsProvider>()
             .Build();
     }
 

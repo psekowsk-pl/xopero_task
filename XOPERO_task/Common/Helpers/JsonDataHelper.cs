@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace XOPERO_task.UI_Tests;
+namespace XOPERO_task.Common.Helpers;
 
 public static class JsonDataHelper
 {

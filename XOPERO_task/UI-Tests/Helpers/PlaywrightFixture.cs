@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
+using XOPERO_task.Common.Helpers;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class PlaywrightFixture : IAsyncLifetime
 {
@@ -11,7 +12,7 @@ public class PlaywrightFixture : IAsyncLifetime
     public async Task InitializeAsync()
     {
         // Load configuration
-        var config = await JsonDataHelper.LoadFromFileAsync<UIConfiguration>(DirectoryHelper.ConfigurationPath);
+        var config = await JsonDataHelper.LoadFromFileAsync<UIConfiguration>(DirectoryHelper.UIConfigurationPath);
         BaseUrl = config.BaseUrl;
 
         // Launch Playwright & Browser

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
+using XOPERO_task.Common.Helpers;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class CheckoutTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
 {
@@ -39,20 +40,23 @@ public class CheckoutTests : IClassFixture<PlaywrightFixture>, IAsyncLifetime
     [Fact]
     public async Task AddProductAndFinishOrder()
     {
+        // Login
         Assert.True(await _homePage.TitleLabel.IsVisibleAsync());
 
-        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.ProductsDataPath);
+        _productsDto = await JsonDataHelper.LoadFromFileAsync<List<ProductDto>>(DirectoryHelper.UIProductsDataPath);
 
-        await _homePage.LoginAsync(new SecretsProvider());
+        await _homePage.LoginAsync(new UISecretsProvider());
 
+        // Add item to basket
         Assert.True(await _productsPage.GetInventoryItem(_productsDto.First()).IsVisibleAsync());
         await _productsPage.GetInventoryItemAddToCartButton(_productsDto.First()).ClickAsync();
         await _productsPage.BasketButton.ClickAsync();
 
+        // Checkout
         Assert.True(await _cartPage.GetInventoryItem(_productsDto.First()).IsVisibleAsync());
         await _cartPage.CheckoutButton.ClickAsync();
 
-        var clientsData = await JsonDataHelper.LoadFromFileAsync<ClientsDataDto>(DirectoryHelper.ClientsDataPath);
+        var clientsData = await JsonDataHelper.LoadFromFileAsync<ClientsDataDto>(DirectoryHelper.UIClientsDataPath);
         await _yourInformationPage.FillAndContinueAsync(clientsData);
         
         Assert.True(await _overviewPage.GetInventoryItem(_productsDto.First()).IsVisibleAsync());

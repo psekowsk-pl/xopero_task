@@ -1,6 +1,6 @@
 ﻿using Microsoft.Playwright;
 
-namespace XOPERO_task.UI_Tests.UI;
+namespace XOPERO_task.UI_Tests;
 
 public class HomePage
 {
@@ -24,7 +24,7 @@ public class HomePage
         await LoginButton.ClickAsync();
     }
 
-    public async Task LoginAsync(SecretsProvider secretsProvider)
+    public async Task LoginAsync(UISecretsProvider secretsProvider)
     {
         await LoginInput.FillAsync(secretsProvider.Login);
         await PasswordInput.FillAsync(secretsProvider.Password);
